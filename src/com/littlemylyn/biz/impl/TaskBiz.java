@@ -1,6 +1,9 @@
 package com.littlemylyn.biz.impl;
 
+import java.util.List;
+
 import com.littlemylyn.biz.TaskBizIF;
+import com.littlemylyn.entity.Task;
 
 /**
  * @author duocai
@@ -14,6 +17,12 @@ public class TaskBiz implements TaskBizIF {
 	 */
 	public TaskBiz() {
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Task> getAllTask() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -19,7 +19,7 @@
          point="org.eclipse.ui.handlers">
       <handler
             commandId="LittleMyLyn.commands.welcomeCommand"
-            class="littlemylyn.handlers.welcomeHandler">
+            class="com.littlemylyn.handlers.WelcomeHandler">
       </handler>
    </extension>
    

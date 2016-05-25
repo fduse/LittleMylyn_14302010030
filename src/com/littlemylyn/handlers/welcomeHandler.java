@@ -12,11 +12,11 @@ import org.eclipse.jface.dialogs.MessageDialog;
  * @see org.eclipse.core.commands.IHandler
  * @see org.eclipse.core.commands.AbstractHandler
  */
-public class welcomeHandler extends AbstractHandler {
+public class WelcomeHandler extends AbstractHandler {
 	/**
 	 * The constructor.
 	 */
-	public welcomeHandler() {
+	public WelcomeHandler() {
 	}
 
 	/**
