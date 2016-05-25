@@ -10,8 +10,6 @@ To create a new branch:
 
 Take "feature" as an example,
 
-first, you should checkout "dev".
-
 ```bash
 git checkout feature
 git checkout -b feature-add-buttons
