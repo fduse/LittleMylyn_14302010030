@@ -34,7 +34,7 @@ public class StatusLeafObject extends TreeObject {
 
 	@Override
 	//TODO
-	public void execute(TreeViewer viewer) {
+	public void doubleClick(TreeViewer viewer) {
 		MessageDialog.openInformation(
 				viewer.getControl().getShell(),
 				"Task View",

@@ -39,7 +39,7 @@ public abstract class ParentObject extends TreeObject {
 	}
 	
 	@Override
-	public void execute(TreeViewer viewer){
+	public void doubleClick(TreeViewer viewer){
 		//do nothing
 	}
 }

@@ -28,7 +28,7 @@ public class DefaultLeafObject extends TreeObject {
 	}
 
 	@Override
-	public void execute(TreeViewer viewer) {
+	public void doubleClick(TreeViewer viewer) {
 		//do nothing
 	}
 

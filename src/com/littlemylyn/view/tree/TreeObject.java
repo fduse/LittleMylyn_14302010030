@@ -27,7 +27,7 @@ public abstract class TreeObject implements IAdaptable {
 	}
 	
 	public abstract Image getImage();
-	public abstract void execute(TreeViewer viewer);
+	public abstract void doubleClick(TreeViewer viewer);
 	
 	@Override
 	public String toString() {

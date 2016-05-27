@@ -74,7 +74,7 @@ public class TaskView extends ViewPart {
 			public void run() {
 				ISelection selection = viewer.getSelection();
 				TreeObject obj = (TreeObject)((IStructuredSelection)selection).getFirstElement();
-				obj.execute(viewer);
+				obj.doubleClick(viewer);
 			}
 		};
 	}
