@@ -39,6 +39,4 @@ public class FileLeafObject extends TreeObject {
 				"Task View",
 				"not implement open file yet");
 	}
-	
-	
 }

@@ -36,12 +36,14 @@ public abstract class TreeObject implements IAdaptable {
 	public void setParent(ParentObject parentObject) {
 		this.parent = parentObject;
 	}
+	
 	public ParentObject getParent() {
 		return parent;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
-	public <T> T getAdapter(Class<T> arg0) {
+	public Object getAdapter(Class arg0) {
 		return null;
 	}
 }

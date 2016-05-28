@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /bin/
 
@@ -5,3 +6,13 @@
 
 .classpath
 *.class
+=======
+# ignore file
+*.class
+
+.classpath
+
+bin/
+
+.settings/
+>>>>>>> 10a47520e2b1077e0dd8737cba149eea4b8acd0d

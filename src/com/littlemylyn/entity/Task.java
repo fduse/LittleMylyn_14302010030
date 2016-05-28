@@ -33,7 +33,6 @@ public class Task {
 		this.status = TaskStatus.New;
 	}
 	
-	
 	public String getName() {
 		return name;
 	}

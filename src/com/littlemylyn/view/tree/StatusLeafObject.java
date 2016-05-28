@@ -40,5 +40,4 @@ public class StatusLeafObject extends TreeObject {
 				"Task View",
 				"not implement change status yet");
 	}
-
 }

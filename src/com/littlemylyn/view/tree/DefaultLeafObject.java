@@ -31,6 +31,5 @@ public class DefaultLeafObject extends TreeObject {
 	public void doubleClick(TreeViewer viewer) {
 		//do nothing
 	}
-
 	
 }

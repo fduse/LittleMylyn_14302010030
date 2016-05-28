@@ -1,6 +1,8 @@
 package com.littlemylyn.view;
 
+
 import org.eclipse.jface.action.Action;
+
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
@@ -85,7 +87,7 @@ public class TaskView extends ViewPart {
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}
-	
+
 	public static void refresh() {
 		viewer.refresh();
 	}
