@@ -29,7 +29,6 @@ public class TaskView extends ViewPart {
 	public static final String ID = "com.littlemylyn.view.TaskView";
 
 	private static TreeViewer viewer;
-	private static Object viewSite;
 	private Action doubleClickAction;
 
 	class ViewLabelProvider extends LabelProvider {
@@ -51,8 +50,7 @@ public class TaskView extends ViewPart {
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new ContentProvider(taskBiz,this));
 		viewer.setLabelProvider(new ViewLabelProvider());
-		viewSite = getViewSite();
-		viewer.setInput(viewSite);
+		viewer.setInput(getViewSite());
 
 		// Create the help context id for the viewer's control
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(), "LittleMylyn.viewer");
