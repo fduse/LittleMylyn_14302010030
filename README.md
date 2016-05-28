@@ -1,0 +1,29 @@
+# LittleMylyn_14302010030
+
+## lab3
+
+**Attention**
+
+All of the commits are under either "feature" or "fix" branch.
+
+To create a new branch:
+
+Take "feature" as an example,
+
+```bash
+git checkout feature
+git checkout -b feature-add-buttons
+do something here
+git add .
+git commit -m"your commit message"
+git pull
+git push origin feature-add-buttons
+```
+
+Once you finish one branch(without bugs), merge it to "dev" branch and delete it.
+
+Once we accomplish one iteration, merge "dev" to "master" but keep "dev" as a permanent branch.
+
+Since time is limited, we adopt AGILE mode to enhance the velocity.
+
+
