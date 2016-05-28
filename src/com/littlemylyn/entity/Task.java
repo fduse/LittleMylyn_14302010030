@@ -83,6 +83,10 @@ public class Task {
 		return files.get(i);
 	}
 	
+	public boolean hasFile(File f) {
+		return false;
+	}
+	
 	public int getFilesSize() {
 		return files.size();
 	}

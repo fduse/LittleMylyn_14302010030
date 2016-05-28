@@ -7,20 +7,23 @@ import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 
 import com.littlemylyn.entity.Task;
+import com.littlemylyn.entity.File;
 
 /**
  * @author duocai
  * @date 2016年5月27日 下午7:59:05
  */
 public class FileLeafObject extends TreeObject {
-
+	private File file;
+	
 	/**
 	 * @param task
 	 * @param name
 	 * 2016年5月27日 下午7:59:05
 	 */
-	public FileLeafObject(Task task, String name) {
+	public FileLeafObject(Task task, String name , File file) {
 		super(task, name);
+		this.file = file;
 	}
 
 	/**
@@ -32,11 +35,7 @@ public class FileLeafObject extends TreeObject {
 	}
 
 	@Override
-	//TODO
 	public void doubleClick(TreeViewer viewer) {
-		MessageDialog.openInformation(
-				viewer.getControl().getShell(),
-				"Task View",
-				"not implement open file yet");
+		file.open();
 	}
 }
