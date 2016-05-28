@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.littlemylyn.biz.TaskBizIF;
+import com.littlemylyn.dao.TaskDaoIF;
+import com.littlemylyn.dao.impl.TaskDao;
 import com.littlemylyn.entity.File;
 import com.littlemylyn.entity.Task;
 import com.littlemylyn.entity.TaskStatus;
@@ -14,13 +16,14 @@ import com.littlemylyn.entity.TaskType;
  * @date 2016年5月25日 下午4:44:00
  */
 public class TaskBiz implements TaskBizIF {
-
+	private TaskDaoIF tDaoIF;
+	
 	/**
 	 * 
 	 * 2016年5月25日 下午4:44:00
 	 */
 	public TaskBiz() {
-		// TODO Auto-generated constructor stub
+		tDaoIF = new TaskDao();
 	}
 
 	/**
@@ -40,6 +43,30 @@ public class TaskBiz implements TaskBizIF {
 		tasks.add(task1);
 		tasks.add(task2);
 		return tasks;
+	}
+
+	@Override
+	public void addTask(Task arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean rmTask(Task arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Task searchTask(String arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateTask(Task arg0) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
