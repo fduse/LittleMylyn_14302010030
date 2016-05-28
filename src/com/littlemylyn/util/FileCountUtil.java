@@ -2,7 +2,9 @@ package com.littlemylyn.util;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
+
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.IEditorInput;
@@ -13,12 +15,16 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
+import org.eclipse.core.runtime.IPath;
+
+import com.littlemylyn.entity.File;
+
 public class FileCountUtil {
 	
 	private IWorkbenchWindow window;
 	private IWorkbenchPage page;
 	private IPartListener listener;
-	private Collection<IEditorInput> fileOpened;
+	private List<IEditorInput> fileOpened;
 	private boolean isStarted = false;
 
 	public FileCountUtil() {
@@ -62,11 +68,11 @@ public class FileCountUtil {
 		}
 	}
 	
-	public Collection<String> finish() {
+	public List<File> finish() {
 		if (isStarted) {
 			page.removePartListener(listener);
 			isStarted = false;
-			return fileOpened.stream().map(f -> f.getName()).collect(Collectors.toList());
+			return toFileList(fileOpened);
 		} else {
 			MessageDialog.openInformation(
 					window.getShell(),
@@ -76,6 +82,15 @@ public class FileCountUtil {
 		}
 	}
 	
+	private List<File> toFileList(List<IEditorInput> list) {
+		List<File> lf = new ArrayList<>();
+		list.forEach(e -> {
+			String name = e.getName();
+			lf.add(new File(name, e));
+		});
+		return lf;
+	}
+
 	public boolean getStarted() {
 		return isStarted;
 	}

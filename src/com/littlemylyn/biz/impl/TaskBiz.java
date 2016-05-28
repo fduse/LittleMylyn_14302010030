@@ -32,12 +32,12 @@ public class TaskBiz implements TaskBizIF {
 	 */
 	@Override
 	public List<Task> getAllTask() {
-		File file = new File("test", "test");
+		//File file = new File("test", "test");
 		
 		Task task1 = new Task("test1", TaskType.Debug, TaskStatus.New);
-		task1.addFile(file);
+		//task1.addFile(file);
 		Task task2 = new Task("test2", TaskType.Feature, TaskStatus.New);
-		task2.addFile(file);
+		//task2.addFile(file);
 		
 		List<Task> tasks = new ArrayList<>();
 		tasks.add(task1);

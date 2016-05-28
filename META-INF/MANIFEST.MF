@@ -7,6 +7,7 @@ Bundle-ClassPath: bin/
 Bundle-Activator: com.littlemylyn.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.junit
+ org.junit,
+ org.eclipse.ui.editors
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

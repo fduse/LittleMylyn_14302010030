@@ -1,6 +1,7 @@
 package com.littlemylyn.handlers;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -13,6 +14,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 
+import com.littlemylyn.entity.File;
 import com.littlemylyn.util.FileCountUtil;
 
 /**
@@ -38,7 +40,7 @@ public class WelcomeHandler extends AbstractHandler {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 
 		if (fc.getStarted()) {
-			Collection<String> ss = fc.finish();
+			List<File> ss = fc.finish();
 			ss.forEach(System.out::println);
 		} else {
 			fc.start();
