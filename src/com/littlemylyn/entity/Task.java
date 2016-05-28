@@ -23,6 +23,16 @@ public class Task {
 		this.status = status;
 	}
 	
+	/**
+	 * 
+	 * 2016年5月28日 下午4:30:03
+	 */
+	public Task(String name, TaskType type) {
+		this.name = name;
+		this.type = type;
+		this.status = TaskStatus.New;
+	}
+	
 	
 	public String getName() {
 		return name;

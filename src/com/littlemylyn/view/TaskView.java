@@ -1,10 +1,6 @@
 package com.littlemylyn.view;
 
-
-import java.util.List;
-
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
@@ -18,7 +14,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
 import com.littlemylyn.biz.impl.TaskBiz;
-import com.littlemylyn.entity.Task;
 import com.littlemylyn.view.tree.TreeObject;
 
 
@@ -33,9 +28,8 @@ public class TaskView extends ViewPart {
 	 */
 	public static final String ID = "com.littlemylyn.view.TaskView";
 
-	private List<Task> tasks;
-	private TreeViewer viewer;
-	private Action open;
+	private static TreeViewer viewer;
+	private static Object viewSite;
 	private Action doubleClickAction;
 
 	class ViewLabelProvider extends LabelProvider {
@@ -54,11 +48,11 @@ public class TaskView extends ViewPart {
 	 */
 	public void createPartControl(Composite parent) {
 		TaskBiz taskBiz = new TaskBiz();
-		tasks = taskBiz.getAllTask();
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
-		viewer.setContentProvider(new ContentProvider(tasks,this));
+		viewer.setContentProvider(new ContentProvider(taskBiz,this));
 		viewer.setLabelProvider(new ViewLabelProvider());
-		viewer.setInput(getViewSite());
+		viewSite = getViewSite();
+		viewer.setInput(viewSite);
 
 		// Create the help context id for the viewer's control
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(), "LittleMylyn.viewer");
@@ -87,19 +81,15 @@ public class TaskView extends ViewPart {
 		});
 	}
 	
-	private void showMessage(String message) {
-		MessageDialog.openInformation(
-			viewer.getControl().getShell(),
-			"Task View",
-			message);
-	}
-
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}
-
+	
+	public static void refresh() {
+		viewer.refresh();
+	}
 	
 }

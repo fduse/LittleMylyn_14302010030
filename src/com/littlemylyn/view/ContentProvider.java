@@ -1,12 +1,12 @@
 package com.littlemylyn.view;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
+import com.littlemylyn.biz.TaskBizIF;
 import com.littlemylyn.entity.Task;
 import com.littlemylyn.view.tree.DefaultLeafObject;
 import com.littlemylyn.view.tree.FileLeafObject;
@@ -22,15 +22,15 @@ import com.littlemylyn.view.tree.TreeObject;
 public class ContentProvider implements IStructuredContentProvider, ITreeContentProvider {
 
 	private ParentObject invisibleRoot;
-	private List<Task> tasks = new ArrayList<>();
+	private TaskBizIF taskBizIF;
 	TaskView view;
 	
 	/**
 	 * 
 	 * 2016年5月27日 下午7:11:11
 	 */
-	public ContentProvider(List<Task> tasks,TaskView view) {
-		this.tasks = tasks;
+	public ContentProvider(TaskBizIF taskBizIF,TaskView view) {
+		this.taskBizIF = taskBizIF;
 		this.view = view;
 	}
 
@@ -40,7 +40,7 @@ public class ContentProvider implements IStructuredContentProvider, ITreeContent
 	}
 	public Object[] getElements(Object parent) {
 		if (parent.equals(view.getViewSite())) {
-			if (invisibleRoot==null) initialize();
+			initialize();
 			return getChildren(invisibleRoot);
 		}
 		return getChildren(parent);
@@ -69,6 +69,7 @@ public class ContentProvider implements IStructuredContentProvider, ITreeContent
 	* expose its hierarchy.
 	*/
 	private void initialize() {
+		List<Task> tasks = taskBizIF.getAllTask();
 		invisibleRoot = new FolderParentObject(null, "");
 		for (Task task : tasks) {
 			TreeObject type = new DefaultLeafObject(task, task.getType().name());

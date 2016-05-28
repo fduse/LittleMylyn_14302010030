@@ -3,7 +3,6 @@ package com.littlemylyn.view.tree;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.internal.mozilla.Execute;
 
 import com.littlemylyn.entity.Task;
 
@@ -40,6 +39,7 @@ public abstract class TreeObject implements IAdaptable {
 	public ParentObject getParent() {
 		return parent;
 	}
+	
 	@Override
 	public <T> T getAdapter(Class<T> arg0) {
 		return null;

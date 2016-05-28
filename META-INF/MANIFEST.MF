@@ -6,7 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.littlemylyn.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.junit
+ org.junit,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: bin/
+Import-Package: org.eclipse.core.resources
