@@ -42,7 +42,13 @@ public class FileCountUtil {
 		// init listener
 		listener = new IPartListener() {
 			@Override
-			public void partActivated(IWorkbenchPart arg0) {}
+			public void partActivated(IWorkbenchPart arg0) {
+				if (arg0 instanceof IEditorPart) {
+					IEditorInput file = ((IEditorPart) arg0).getEditorInput();
+					if (fileOpened.contains(file)) return;
+					fileOpened.add(file);
+				}
+			}
 			@Override
 			public void partBroughtToTop(IWorkbenchPart arg0) {}
 			@Override
