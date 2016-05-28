@@ -1,8 +1,7 @@
-# ignore file
-*.class
 
-.classpath
-
-bin/
+/bin/
 
 .settings/
+
+.classpath
+*.class
