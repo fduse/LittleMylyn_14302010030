@@ -2,6 +2,7 @@ package com.littlemylyn.test;
 
 import static org.junit.Assert.*;
 
+import org.eclipse.ui.IFileEditorInput;
 import org.junit.Before;
 import org.junit.Test;
 
