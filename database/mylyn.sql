@@ -31,15 +31,6 @@ CREATE TABLE `file` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `file`
---
-
-LOCK TABLES `file` WRITE;
-/*!40000 ALTER TABLE `file` DISABLE KEYS */;
-INSERT INTO `file` VALUES (7,'filename1','filepath1','nn'),(8,'filename2','filepath2','nn'),(9,'filename3','pathname3','nn');
-/*!40000 ALTER TABLE `file` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `task`
@@ -57,15 +48,7 @@ CREATE TABLE `task` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `task`
---
 
-LOCK TABLES `task` WRITE;
-/*!40000 ALTER TABLE `task` DISABLE KEYS */;
-INSERT INTO `task` VALUES (1,'Feature','New','nnn'),(5,'Feature','New','nn'),(8,'Feature','New','oo1'),(9,'Feature','New','ooo');
-/*!40000 ALTER TABLE `task` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

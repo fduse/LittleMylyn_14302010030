@@ -20,7 +20,7 @@ public interface TaskBizIF {
 	 * @param task
 	 * 2016年5月28日 上午9:36:24
 	 */
-	public void addTask(Task task);//
+	public boolean addTask(Task task);//
 	
 	/**
 	 * remove the parameter task

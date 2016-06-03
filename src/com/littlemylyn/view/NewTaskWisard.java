@@ -1,9 +1,11 @@
 package com.littlemylyn.view;
 
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.PlatformUI;
 
 import com.littlemylyn.biz.TaskBizIF;
 import com.littlemylyn.biz.impl.TaskBiz;
@@ -51,7 +53,12 @@ public class NewTaskWisard extends Wizard implements INewWizard{
 		final String taskName = page.getTaskName();
 		final String taskType = page.getTaskType();
 		Task task = new Task(taskName, getType(taskType));
-		taskBizIF.addTask(task);
+		if (!taskBizIF.addTask(task)) {
+			MessageDialog.openInformation(
+					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
+					"LittleMyLyn",
+					"Task is already existed!");
+		}
 		TaskView.refresh();
 		return true;
 	}

@@ -10,7 +10,7 @@ public class DBUtil {
 
 	private final static String URL = "jdbc:mysql://localhost:3306/mylyn";
 	private final static String USER = "root";
-	private final static String PASSWORD = "password";
+	private final static String PASSWORD = "123456";
 	
 	public DBUtil() {
 		try {

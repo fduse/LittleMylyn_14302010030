@@ -12,6 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.editors
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: bin/
+Bundle-ClassPath: bin/,
+ lib/mysql-connector-java-5.1.35-bin.jar
 Import-Package: org.eclipse.core.resources
 

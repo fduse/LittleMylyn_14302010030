@@ -56,10 +56,8 @@ public class File {
 		return name;
 	}
 
-	public String toString() {
-		String name = this.name;
+	public String getPath() {
 		String path = ((IFileEditorInput)file).getFile().getFullPath().toString();
-		//TODO
-		return null;
+		return path;
 	}
 }

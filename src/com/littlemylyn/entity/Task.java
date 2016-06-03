@@ -84,6 +84,11 @@ public class Task {
 	}
 	
 	public boolean hasFile(File f) {
+		for (File file : files) {
+			if (f.getPath().equals(file.getPath())) {
+				return true;
+			}
+		}
 		return false;
 	}
 	

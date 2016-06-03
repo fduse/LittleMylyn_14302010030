@@ -14,7 +14,6 @@ import com.littlemylyn.entity.Task;
  */
 public class TaskBiz implements TaskBizIF {
 	private TaskDaoIF tDaoIF;
-	private static List<Task> tasks = new ArrayList<>();
 	/**
 	 * 
 	 * 2016年5月25日 下午4:44:00
@@ -24,19 +23,17 @@ public class TaskBiz implements TaskBizIF {
 	}
 
 	/**
-	 * TODO
-	 * this is not the real implement at present
+	 * 
 	 */
 	@Override
 	public List<Task> getAllTask() {
-		return tasks;
+		return tDaoIF.getAllTask();
 	}
 
 	@Override
 	public boolean addTask(Task arg0) {
 		//如果该文件已经存在则不能增加 返回False
 		if (tDaoIF.searchTask(arg0.getName())!=null) return false;
-		tasks.add(arg0);
 		tDaoIF.addTask(arg0);
 		return true;
 	}

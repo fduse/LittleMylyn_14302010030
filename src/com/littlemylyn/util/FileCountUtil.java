@@ -69,16 +69,18 @@ public class FileCountUtil {
 		fileOpened = new ArrayList<>();
 	}
 	
-	public void start() {
+	public boolean start() {
 		if (isStarted) {
 			MessageDialog.openInformation(
 					window.getShell(),
 					"LittleMyLyn",
 					"Already started!");
+			return false;
 		} else {
 			fileOpened.clear();
 			page.addPartListener(listener);
 			isStarted = true;
+			return true;
 		}
 	}
 	
