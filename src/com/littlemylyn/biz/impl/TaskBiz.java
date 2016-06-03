@@ -33,26 +33,34 @@ public class TaskBiz implements TaskBizIF {
 	}
 
 	@Override
-	public void addTask(Task arg0) {
-		// TODO Auto-generated method stub
+	public boolean addTask(Task arg0) {
+		//如果该文件已经存在则不能增加 返回False
+		if (tDaoIF.searchTask(arg0.getName())!=null) return false;
 		tasks.add(arg0);
+		tDaoIF.addTask(arg0);
+		return true;
 	}
 
 	@Override
 	public boolean rmTask(Task arg0) {
-		// TODO Auto-generated method stub
+		if (tDaoIF.searchTask(arg0.getName())!=null){
+			tDaoIF.rmTask(arg0);
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public Task searchTask(String arg0) {
-		// TODO Auto-generated method stub
-		return null;
+		return tDaoIF.searchTask(arg0);
 	}
 
 	@Override
 	public boolean updateTask(Task arg0) {
-		// TODO Auto-generated method stub
+		if (tDaoIF.searchTask(arg0.getName())!=null){
+			tDaoIF.updateTask(arg0);
+			return true;
+		}
 		return false;
 	}
 
